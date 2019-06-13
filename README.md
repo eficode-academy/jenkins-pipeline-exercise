@@ -30,12 +30,21 @@ The result should very well be that you have a blue (successful) build. Verify i
 * Scroll to the pipeline section
 * In the `definition`, select `Pipeline script from SCM`
 * Add the url to your newly forked repository
-* Now build
+* Set the branch to */trondheim
+* Save
+* Build
 * Expect the unexpected!
 
 ## 4 make Jenkins trigger on changes from github
 
-	Under job configuration go to triggers and set the trigger of your choosing;)
+* Go to the settings section of your repo
+* Select webhooks
+* Create a new webhook. The url will be <yourIp>/github-webhook/
+
+* Go to your Jenkins server
+* Configure your job
+* At the trigger section, select `GitHub hook trigger for GITScm polling`
+* Save
 
 ## 5. make stages
 
