@@ -8,9 +8,12 @@ This repository comes with a java project from the start, but any language can b
 The description of the application can be read [here](gildedrose.md), but is not necessary yet.
 
 ## 0. Fork the repo and clone it down on your machine
+
 	And with your machine, we mean your VM.
 
 ## 1. Create a Jenkins server
+
+Make sure that you do not have anything listening on port 8080. (*docker ps will help you see if any containers is ocupying the port*)
 
  * Cd into the repo 
  * Checkout the trondheim branch
@@ -18,6 +21,10 @@ The description of the application can be read [here](gildedrose.md), but is not
  * execute the setup.sh
 
 ## 2. Create a job
+
+Everything Jenkins can help us with is within a job. It is where we will describe the build and test processes.
+
+### Tasks
 
 * Go into your Jenkins server and click on the `New Item` button on the left.
 * Name your new job "#team# gilded rose" and choose `Pipeline` and click OK
@@ -28,6 +35,11 @@ The result should very well be that you have a blue (successful) build. Verify i
 
 
 ## 3. Link Jenkins with your repo
+
+It's a tad overkill to install Jenkins just to print `hello-world`. 
+So we would like Jenkins to clone down the repo we have to build and test the software.
+
+### Tasks
 
 * Click the `configure` button in the job
 * Scroll to the pipeline section
@@ -40,9 +52,13 @@ The result should very well be that you have a blue (successful) build. Verify i
 
 ## 4 make Jenkins trigger on changes from github
 
+You want Jenkins to only trigger when you have something new to trigger on.
+
+### Tasks
+
 * Go to the settings section of your repo
 * Select webhooks
-* Create a new webhook. The url will be <yourIp>/github-webhook/
+* Create a new webhook. The url will be <yourIp>:8080/github-webhook/
 
 * Go to your Jenkins server
 * Configure your job
