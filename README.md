@@ -33,25 +33,28 @@ The result should very well be that you have a blue (successful) build. Verify i
 * Now build
 * Expect the unexpected!
 
+## 4 make Jenkins trigger on changes from github
 
-## 4. make stages
+	Under job configuration go to triggers and set the trigger of your choosing;)
 
-Edit the Jenkinsfile on your newly forked repository
+## 5. make stages
+
+Edit the Jenkinsfile on your newly forked repository (Feel free to clone it to your own machine. This way you can use a proper IDE)
 Make three stages:
 
 * `Preparation`
 * `Build`
 * `Results`
 
-each of the states should have a sh part saying `echo "stage name"`
+each of the states should have part saying `echo "stage name"`
 
 Find the decalarative syntax [here](https://jenkins.io/doc/book/pipeline/jenkinsfile/).
 
 Commit and push your changes
 
-Go to the Jenkins server and run the job to see that it's working, and all three stages are present in the UI afterwards.
+Go to the Jenkins server and see if the job was triggered, and all three stages are present in the UI afterwards.
 
-## 5. Running a Gradle test and archiving
+## 6. Running a Gradle test and archiving
 
 With `Preperation` now being done, we need to build the code and store the result.
 For each of the bullit points, try to build it to make sure it works before moving to the next.
@@ -62,7 +65,7 @@ For each of the bullit points, try to build it to make sure it works before movi
 
 The archiving part can be verified by looking for a small blue arrow next to the build number in the overview. Make sure you get your Jar file with you there.
 
-## 6. fixing Gilded Rose
+## 7. fixing Gilded Rose
 
 Having your pipeline set up, now it is time to fix the software problem itself. Go back to [the gilded rose description to read about it](gildedrose.md)
 
