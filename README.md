@@ -7,12 +7,14 @@ This repository comes with a java project from the start, but any language can b
 
 The description of the application can be read [here](gildedrose.md), but is not necessary yet.
 
-## 0. Create a Jenkins server
+## 0. Fork the repo and clone it down on your machine
+	And with your machine, we mean your VM.
 
-From your vm run `docker run -d -p 80:8080 jenkins/jenkins:lts`
-Verify that jenkins is running by typing in your ip in your browser
+## 1. Create a Jenkins server
+	Cd into the repo and the setup folder.
+	execute the setup.sh
 
-## 1. Create a job
+## 2. Create a job
 
 * Go into your Jenkins server and click on the `New Item` button on the left.
 * Name your new job "#team# gilded rose" and choose `Pipeline` and click OK
@@ -21,9 +23,6 @@ Verify that jenkins is running by typing in your ip in your browser
 
 The result should very well be that you have a blue (successful) build. Verify in Console that hello world was printed out.
 
-## 2. Fork the source code
-
-For the repo and clone it to your machine(or VM)
 
 ## 3. Link Jenkins with your repo
 
@@ -37,8 +36,7 @@ For the repo and clone it to your machine(or VM)
 
 ## 4. make stages
 
-Click `configure` to reconfigure the pipeline.
-
+Edit the Jenkinsfile on your newly forked repository
 Make three stages:
 
 * `Preparation`
@@ -49,7 +47,9 @@ each of the states should have a sh part saying `echo "stage name"`
 
 Find the decalarative syntax [here](https://jenkins.io/doc/book/pipeline/jenkinsfile/).
 
-Run this to see that it's working, and all three stages are present in the UI afterwards.
+Commit and push your changes
+
+Go to the Jenkins server and run the job to see that it's working, and all three stages are present in the UI afterwards.
 
 ## 5. Running a Gradle test and archiving
 
