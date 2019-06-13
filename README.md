@@ -58,7 +58,7 @@ You want Jenkins to only trigger when you have something new to trigger on.
 
 * Go to the settings section of your repo
 * Select webhooks
-* Create a new webhook. The url will be <yourIp>:8080/github-webhook/
+* Create a new webhook. The url will be yourIp:8080/github-webhook/
 
 * Go to your Jenkins server
 * Configure your job
