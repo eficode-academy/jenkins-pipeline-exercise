@@ -11,8 +11,11 @@ The description of the application can be read [here](gildedrose.md), but is not
 	And with your machine, we mean your VM.
 
 ## 1. Create a Jenkins server
-	Cd into the repo and the setup folder.
-	execute the setup.sh
+
+ * Cd into the repo 
+ * Checkout the trondheim branch
+ * cd into the setup folder.
+ * execute the setup.sh
 
 ## 2. Create a job
 
