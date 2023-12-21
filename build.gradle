@@ -6,16 +6,22 @@ version = '0.0.1-SNAPSHOT'
 
 description = """gildedrose"""
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
-tasks.withType(JavaCompile) {
-	options.encoding = 'UTF-8'
+// Update to Java 17 compatibility
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(17))
+    }
 }
 
-repositories {  
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+repositories {
      maven { url "http://repo.jenkins-ci.org/public/" }
      maven { url "http://repo.maven.apache.org/maven2" }
 }
+
 dependencies {
     testCompile group: 'junit', name: 'junit', version:'4.12'
 }
